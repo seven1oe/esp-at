@@ -63,7 +63,7 @@ jobs:
   build-esp32-at-all-bt-features-no-wifi:
     uses: ./.github/workflows/build_template_esp32.yml
     with:
-      module_name: WROVER-32
+      module_name: WROOM-32
       artifacts_name: esp32-at-all-bt-features-no-wifi
       enable_all_bt_features_no_wifi: true
     secrets: inherit
