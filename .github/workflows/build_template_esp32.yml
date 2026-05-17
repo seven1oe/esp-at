@@ -38,7 +38,7 @@ jobs:
     env:
       PLATFORM: PLATFORM_ESP32
       MODULE_NAME: ${{ inputs.module_name }}
-      SILENCE: 1
+      SILENCE: 0
     steps:
     - uses: actions/checkout@v6.0.2
     - uses: actions/setup-python@v6.2.0
