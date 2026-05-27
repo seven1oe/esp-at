@@ -77,7 +77,7 @@ jobs:
     - name: Post process
       run: |
         cp .github/workflows/NOTES.txt NOTES.txt
-    - run: echo "artifacts_name=${{ inputs.artifacts_name }}-${{ github.sha }}" >> "$GITHUB_ENV"
+    - run: echo "artifacts_name=${{ inputs.artifacts_name }}-${GITHUB_SHA::7}" >> "$GITHUB_ENV"
     - name: Upload artifacts
       uses: actions/upload-artifact@v7.0.0
       with:
