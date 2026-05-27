@@ -77,10 +77,11 @@ jobs:
     - name: Post process
       run: |
         cp .github/workflows/NOTES.txt NOTES.txt
+    - run: echo "artifacts_name=${{ inputs.artifacts_name }}-${{ github.sha }}" >> "$GITHUB_ENV"
     - name: Upload artifacts
       uses: actions/upload-artifact@v7.0.0
       with:
-        name: ${{ inputs.artifacts_name }}
+        name: ${{ env.artifacts_name }}
         path: |
           sdkconfig
           build/*.bin
