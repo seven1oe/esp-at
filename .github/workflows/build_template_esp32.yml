@@ -78,12 +78,12 @@ jobs:
       run: |
         cp .github/workflows/NOTES.txt NOTES.txt
     - name: Set Artifacts Name
-      id: artifacts_name
+      id: set_artifacts_name
       run: echo "artifacts_name=${{ inputs.artifacts_name }}-${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
     - name: Upload artifacts
       uses: actions/upload-artifact@v7.0.0
       with:
-        name: ${{ steps.artifacts_name.outputs.artifacts_name }}
+        name: ${{ steps.set_artifacts_name.outputs.artifacts_name }}
         path: |
           sdkconfig
           build/*.bin
